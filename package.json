@@ -4,7 +4,9 @@
   "description": "Measure browser rendering performance metrics",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha --recursive --require=./test/test.helper.js ./test"
+    "test": "node_modules/.bin/mocha --recursive --require=./test/test.helper.js ./test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "bin": {
     "browser-perf": "lib/cli.js"
@@ -22,7 +24,8 @@
     "jsmin": "~1.0.1",
     "q": "^1.4.1",
     "request": "^2.65.0",
-    "wd": "^1.0.0"
+    "wd": "^1.0.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "~3.4.0",
@@ -51,5 +54,6 @@
   ],
   "bugs": {
     "url": "https://github.com/axemclion/browser-perf/issues"
-  }
+  },
+  "snyk": true
 }
